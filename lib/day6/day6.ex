@@ -15,5 +15,5 @@ defmodule AOC22.Day6 do
   end
 end
 
-File.read!('lib/day6/input.txt') |> AOC22.Day6.solution(4)
 File.read!('lib/day6/input.txt') |> AOC22.Day6.solution(14)
+File.read!('lib/day6/input.txt') |> AOC22.Day6.solution(4)

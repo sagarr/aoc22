@@ -1,5 +1,4 @@
 defmodule AOC22.Day5 do
-
   def part1(input) do
     input
     |> String.split("\n")
@@ -10,17 +9,17 @@ defmodule AOC22.Day5 do
     end)
     |> Enum.reduce(
       # left: top of the stack, right: bottom of the stack
-         %{
-           "1" => [P, G, R, N],
-           "2" => [C, D, G, F, L, B, T, J],
-           "3" => [V, S, M],
-           "4" => [P, Z, C, R, S, L],
-           "5" => [Q, D, W, C, V, L, S, P],
-           "6" => [S, M, D, W, N, T, C],
-           "7" => [P, W, G, D, H],
-           "8" => [V, M, C, S, H, P, L, Z],
-           "9" => [Z, G, W, L, F, P, R]
-         },
+      %{
+        "1" => [P, G, R, N],
+        "2" => [C, D, G, F, L, B, T, J],
+        "3" => [V, S, M],
+        "4" => [P, Z, C, R, S, L],
+        "5" => [Q, D, W, C, V, L, S, P],
+        "6" => [S, M, D, W, N, T, C],
+        "7" => [P, W, G, D, H],
+        "8" => [V, M, C, S, H, P, L, Z],
+        "9" => [Z, G, W, L, F, P, R]
+      },
       fn {move_by, from, to}, stacks ->
         move_crate_mover_9000(stacks, String.to_integer(move_by), from, to)
       end
@@ -46,22 +45,22 @@ defmodule AOC22.Day5 do
       |> List.to_tuple()
     end)
     |> Enum.reduce(
-         # left: top of the stack, right: bottom of the stack
-         %{
-           "1" => [P, G, R, N],
-           "2" => [C, D, G, F, L, B, T, J],
-           "3" => [V, S, M],
-           "4" => [P, Z, C, R, S, L],
-           "5" => [Q, D, W, C, V, L, S, P],
-           "6" => [S, M, D, W, N, T, C],
-           "7" => [P, W, G, D, H],
-           "8" => [V, M, C, S, H, P, L, Z],
-           "9" => [Z, G, W, L, F, P, R]
-         },
-         fn {move_by, from, to}, stacks ->
-           move_crate_mover_9001(stacks, String.to_integer(move_by), from, to)
-         end
-       )
+      # left: top of the stack, right: bottom of the stack
+      %{
+        "1" => [P, G, R, N],
+        "2" => [C, D, G, F, L, B, T, J],
+        "3" => [V, S, M],
+        "4" => [P, Z, C, R, S, L],
+        "5" => [Q, D, W, C, V, L, S, P],
+        "6" => [S, M, D, W, N, T, C],
+        "7" => [P, W, G, D, H],
+        "8" => [V, M, C, S, H, P, L, Z],
+        "9" => [Z, G, W, L, F, P, R]
+      },
+      fn {move_by, from, to}, stacks ->
+        move_crate_mover_9001(stacks, String.to_integer(move_by), from, to)
+      end
+    )
     |> IO.inspect()
     |> Enum.map(fn {_, [v | _]} -> v end)
     |> IO.inspect()
